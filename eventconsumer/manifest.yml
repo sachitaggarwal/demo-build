@@ -1,0 +1,29 @@
+---
+# Default Manifest with single input for sample
+applications:
+- name: persephone-event-consumer-prod
+  host: persephone-event-consumer-prod
+  memory: 768M
+  path: target/event-consumer-app.war
+  random-route: false
+  services:
+    # This must point to an existing `enterprise messaging` service instance
+    # if service name gets changed this must also be changed in the `SAP_XBEM_BINDINGS` -> "brokerInstanceName"
+    - messaging-prod
+    - dest-service
+  env:
+    SAP_XBEM_BINDINGS: >
+      {    
+      "inputs": {
+          "in_queue": {
+            "service": "messaging-prod",
+             "address": "queue:Persephone_Queue"
+          }          
+        },    
+         "outputs": {
+          "out_queue": {
+            "service": "messaging-prod",
+            "address": "queue:Persephone_Queue"
+          }
+        }
+      }

@@ -1,0 +1,1 @@
+java -jar MTABUILDER.JAR --build-target=CF build

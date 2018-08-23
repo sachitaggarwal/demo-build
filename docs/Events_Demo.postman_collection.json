@@ -1,0 +1,123 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Events_Demo",
+		"_postman_id": "9fc31a0d-9af0-7e14-ccec-de6e62e4c2b8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send Msg to Q Persephone",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "P1943073002",
+						"password": "Abcd_1234",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "https://i030998-event-publisher.cfapps.sap.hana.ondemand.com/messages",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic UDE5NDMwNzMwMDI6QWJjZF8xMjM0",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"EVENT_PAYLOAD\":{\"BUSINESSEVENT\":\"ZFEG8BpAHtiG88DMEgS0lw==\",\"TIMESTAMP\":20180227091016,\"KEY\":[{\"BUSINESSPARTNER\":\"TEMO91\"}]}}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch S4Hana Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "SAPCP_COMM_USER",
+						"password": "Abcd_1234Abcd_1234Abcd_1234",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "https://{{s4hana}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic U0FQQ1BfQ09NTV9VU0VSOkFiY2RfMTIzNEFiY2RfMTIzNEFiY2RfMTIzNA==",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "Fetch",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BusinessPartner\": \"11991199\",\r\n    \"BusinessPartnerUUID\": \"00163e4a-3be2-1ed7-bf9c-0f0861f5bf6f\",\r\n    \"CorrespondenceLanguage\": \"\",\r\n    \"CreatedByUser\": \"CB9980000040\",\r\n    \"CreationDate\": \"/Date(1498003200000)/\",\r\n    \"CreationTime\": \"PT16H53M29S\",\r\n    \"FirstName\": \"\",\r\n    \"FormOfAddress\": \"0002\",\r\n    \"Industry\": \"\",\r\n    \"InternationalLocationNumber1\": \"0\",\r\n    \"InternationalLocationNumber2\": \"0\",\r\n    \"Customer\": \"11991199\",\r\n    \"IsFemale\": false,\r\n    \"IsMale\": true,\r\n    \"IsNaturalPerson\": \"X\",\r\n    \"IsSexUnknown\": false,\r\n    \"Language\": \"\",\r\n    \"LastChangeDate\": null,\r\n    \"LastChangeTime\": \"PT00H00M00S\",\r\n    \"LastChangedByUser\": \"\",\r\n    \"LastName\": \"Aggarwal\",\r\n    \"LegalForm\": \"01\",\r\n    \"Supplier\": \"\",\r\n    \"OrganizationBPName1\": \"Inlandskunde DE 1\",\r\n    \"OrganizationBPName2\": \"JJJ\",\r\n    \"OrganizationBPName3\": \"\",\r\n    \"OrganizationBPName4\": \"\",\r\n    \"OrganizationFoundationDate\": null,\r\n    \"OrganizationLiquidationDate\": null,\r\n    \"SearchTerm1\": \"KUNDE1\",\r\n    \"AdditionalLastName\": \"\",\r\n    \"BirthDate\": null,\r\n    \"BusinessPartnerIsBlocked\": false,\r\n    \"AcademicTitle\": \"\",\r\n    \"BusinessPartnerType\": \"\",\r\n    \"ETag\": \"SAP_SYSTEM20170621165329\",\r\n    \"GroupBusinessPartnerName1\": \"\",\r\n    \"GroupBusinessPartnerName2\": \"\",\r\n    \"IndependentAddressID\": \"\",\r\n    \"InternationalLocationNumber3\": \"0\",\r\n    \"MiddleName\": \"\",\r\n    \"NameCountry\": \"\",\r\n    \"NameFormat\": \"\",\r\n    \"PersonFullName\": \"\",\r\n    \"AuthorizationGroup\": \"\",\r\n    \"PersonNumber\": \"\",\r\n    \"IsMarkedForArchiving\": false,\r\n    \"YY1_ProposedBy_bus\": \"Britta\",\r\n    \"YY1_ApprovedBy_bus\": \"Sangee\",\r\n    \"BusinessPartnerCategory\": \"2\",\r\n    \"BusinessPartnerFullName\": \"Inlandskunde DE 1\",\r\n    \"BusinessPartnerGrouping\": \"BP03\",\r\n    \"BusinessPartnerName\": \"Inlandskunde DE 1\"\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POSTBusinessPartner_CXT",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "SAPCP_COMM_USER",
+						"password": "Abcd_1234Abcd_1234Abcd_1234",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "https://{{s4hana}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic U0FQQ1BfQ09NTV9VU0VSOkFiY2RfMTIzNEFiY2RfMTIzNEFiY2RfMTIzNA==",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-csrf-token",
+						"value": "0KHVEueiA0Bl2GSNRGThQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"BusinessPartner\": \"Taemo101\",\r\n\t\"BusinessPartnerGrouping\": \"BPAB\",\r\n\t\"BusinessPartnerCategory\": \"1\",\r\n\t\"FirstName\": \"Karl2\",\r\n\t\"LastName\": \"Singh\",\r\n\t\"Customer\": \"Taemo101\",\r\n\t\"to_BusinessPartnerRole\": [{\r\n\t\t\"BusinessPartner\": \"Taemo101\",\r\n\t\t\"BusinessPartnerRole\": \"BUP001\"\r\n\t}],\r\n\t\"to_BusinessPartnerAddress\": [{\r\n\t\t\"BusinessPartner\": \"Taemo101\",\r\n\t\t\"CityName\": \"Mumbai\",\r\n\t\t\"Country\": \"IN\",\r\n\t\t\"Language\": \"EN\",\r\n\t\t\"PostalCode\": \"12345\"\r\n\t}]\r\n\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
